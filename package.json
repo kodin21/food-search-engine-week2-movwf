@@ -6,10 +6,11 @@
     "author": "Berkay Aydın <sbayd06@gmail.com>",
     "license": "MIT",
     "scripts": {
-      "start": "parcel index.html"
+        "start": "parcel index.html"
     },
     "devDependencies": {
-      "parcel-bundler": "^1.12.5"
+        "@babel/core": "^7.14.6",
+        "@babel/preset-react": "^7.14.5",
+        "parcel-bundler": "^1.12.5"
     }
-  }
-  
+}
