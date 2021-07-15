@@ -1,30 +1,41 @@
-### ODEV ONCESI
-Eğer bu repoyu kullanarak kendi bilgisayarinizda development yapmak isterseniz sirasiyla,
-1) Repoyu clonelayin
-2) yarn veya npm install komutunu calistirin (Sadece birisi)
-3) yarn start veya npm start komutunu calistirin (sadece birisi)
+### Yemek Arama Motoru
 
-index.js'e ve index.html'e kod yazarak baslayabilirsiniz. yarn start yaptiysaniz degisiklikleriniz otomatik olarak ekranda gorulmeli. Sorun yasarsaniz asistanlari bulun.
+[Live Preview](https://bootcamp-movwf-foodie.netlify.app/)
 
-Eger bu repoyu kullanmadan (parcel olmadan) kullanmak istiyorsaniz;
+- JS
+- Fuse.js
+- Dombul-DOM ( Updated ! )
+- Parcel
+- TailwindCSS
+- Fontawesome
+- LocalStorage
 
-1) Codesandbox.com 'u kullanabilirsiniz
-2) direk index.html'e yazarak calistirabilirsiniz.
+kullanılarak tamamlanmıştır.
 
+> Screenshoots
+
+![Screen-1](https://i.ibb.co/8KZnb1B/foodie-1.png)
+
+![Screen-2](https://i.ibb.co/K7XYKdv/foodie-2.png)
 
 ODEV
 
------ 
+---
+
 ### Yemek Arama Motoru
 
-Bir yemek arama moturu yapmakla sorumlusunuz, ana ekranda sadece bir arama kutusu ve login olan kullanicinin adı olacak. 
+Bir yemek arama moturu yapmakla sorumlusunuz, ana ekranda sadece bir arama kutusu ve login olan kullanicinin adı olacak.
 Kullanici veri girdikce bir arama yapacaksiniz ve cikan sonuclari listeleyeceksiniz.
 Cikan sonuclar bir kartta listelenir. Kartın uzerine tıkladığınizda o karta odaklanacak. (Border olabilir ,ekranın ortasına gelebilir.). Kartta favorilere ekle butonu vardır. Kart açıkkan F tuşu ile ya da butona basarak favoriye/ekle çıkar işlemi gerçekleştirilebilir. Browser'i kapatip actiktan sonra da favorilerim kalmaya devam etmeli.
 
+- [] Login olan kullanıcı bilgileri endpoint: https://jsonplaceholder.typicode.com/users/1
 
-- Login olan kullanıcı bilgileri endpoint: https://jsonplaceholder.typicode.com/users/1
-- Tüm yemek listesi endpoint: https://jsonplaceholder.typicode.com/todos (title, yemek adı olsun)
-- Uygulama açıldığında kullanıcı bilgileri ve yemek listesi yüklenecek. Bu iki yükleme olurken ekranda loading  çıkacak.
-- Login olan kullanıci bilgisi arama kutusunun ustunde Merhaba, {name} seklinde yazacak.
-+ Arama yaparken fuse.js kullanmayı deneyin
-+ Ard arda arama yaparken olabildiğince performanslı yazmayı deneyin. (Neler yapılabilir?)
+- [] Tüm yemek listesi endpoint: https://jsonplaceholder.typicode.com/todos (title, yemek adı olsun)
+
+- [] Uygulama açıldığında kullanıcı bilgileri ve yemek listesi yüklenecek. Bu iki yükleme olurken ekranda loading çıkacak.
+
+- [] Login olan kullanıci bilgisi arama kutusunun ustunde Merhaba, {name} seklinde yazacak.
+
+* [] Arama yaparken fuse.js kullanmayı deneyin
+
+* [] Ard arda arama yaparken olabildiğince performanslı yazmayı deneyin. (Neler yapılabilir?)
