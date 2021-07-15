@@ -1,4 +1,6 @@
 import { DombulDOM } from 'dombul-dom';
+import { showModal } from '../../utils/toggleModal';
+import BigMealCard from './BigMealCard';
 
 const MiniMealCard = ({ idMeal, strMeal, strArea, strCategory, strMealThumb, strYoutube, isFavorited }) => {
   return (
@@ -8,6 +10,9 @@ const MiniMealCard = ({ idMeal, strMeal, strArea, strCategory, strMealThumb, str
       <div 
         className="absolute z-10 w-8 h-8 top-1 right-1 flex flex-col justify-center items-center"
         tabIndex="3"
+        onClick={()=>{
+          showModal(BigMealCard({ idMeal, strMeal, strArea, strCategory, strMealThumb, strYoutube, isFavorited }),"js-big-"+idMeal);
+        }}
       >
         <div className={`w-8 h-8 rounded-full flex flex-col justify-center items-center ${isFavorited?"hover:bg-yellow-100 bg-yellow-400":"hover:bg-gray-300 bg-black"}`}>
           <i className="far fa-star text-white fill-current"></i>
