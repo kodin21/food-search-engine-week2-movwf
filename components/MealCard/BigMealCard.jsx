@@ -1,4 +1,5 @@
 import { DombulDOM } from 'dombul-dom';
+import { favoriteMeal } from '../../utils/favoriteMeal';
 
 const BigMealCard = ({
   idMeal,
@@ -13,6 +14,11 @@ const BigMealCard = ({
     <div
       id={"js-big-"+idMeal}
       className="relative w-[300px] z-20 h-96 bg-white rounded-lg border-2 border-black"
+      onKeyDown={(e)=>{
+        if(e.key == "F" || e.key == "f"){
+          favoriteMeal(idMeal,"js-big-"+idMeal);
+        }
+      }}
       tabIndex="0"
     >
       <img
@@ -37,7 +43,11 @@ const BigMealCard = ({
           <span>Video</span>
         </a>
         <div className="h-14 w-14 flex flex-col justify-center items-center">
-          <i className={`far fa-star fa-2x hover:bg-yellow-300 hover:mouse-pointer ${isFavorited?"text-white bg-yellow-500":"text-black"}`}></i>
+          <i className={`far fa-star fa-2x hover:bg-yellow-300 hover:mouse-pointer ${isFavorited?"text-white bg-yellow-500":"text-black"}`}
+             onClick={()=>{
+              favoriteMeal(idMeal,"js-big-"+idMeal);
+             }}
+          ></i>
           <span>Favorite</span>
         </div>
       </div>
