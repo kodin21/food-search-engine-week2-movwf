@@ -14,6 +14,7 @@
         "parcel-bundler": "^1.12.5"
     },
     "dependencies": {
-        "dombul-dom": "^1.1.2"
+        "dombul-dom": "^1.1.2",
+        "fuse.js": "^6.4.6"
     }
 }
