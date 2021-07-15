@@ -5,6 +5,7 @@ const App = () => {
   return (
     <div id="js-app" className="h-screen w-screen flex flex-col">
       {Header({ name: "John Doe" })}
+      {SearchBar()}
     </div>
   );
 };
