@@ -1,14 +1,12 @@
 import { DombulDOM } from "dombul-dom";
 import ModalBackdrop from "../components/ModalBackdrop";
 
-export const showModal = (childElem, elementId) => {
+export const showModal = async (childElem, elementId) => {
   let appNode = document.getElementById("js-app");
 
-  DombulDOM.render(ModalBackdrop(childElem), appNode);
+  await DombulDOM.render(ModalBackdrop(childElem), appNode);
 
-  setTimeout(() => {
-    document.getElementById(elementId).focus();
-  }, 1000);
+  document.getElementById(elementId).focus();
 };
 
 export const closeModal = () => {
