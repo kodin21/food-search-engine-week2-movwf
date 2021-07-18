@@ -1,29 +1,46 @@
-import { DombulDOM } from 'dombul-dom';
-import { getMealDB } from '../../services/localStorage'
-import { updateResultListRender } from '../../utils/reRender';
-import debounce from '../../utils/deBounce'
-import ResultsList from '../SearchResults/ResultsList';
-import { fussy } from '../../utils/loadFetch';
+import { DombulDOM } from "dombul-dom";
+import { updateResultListRender } from "../../utils/reRender";
+import { getMealDB } from "../../services/localStorage";
+import { fussy } from "../../utils/loadFetch";
+import debounce from "../../utils/deBounce";
+import {
+  SEARCH_RESULTS_CONTAINER_ID,
+  SEARCH_RESULTS_LIST_ELEMENT_ID,
+} from "../../config/constants";
+import ResultsList from "../SearchResults/ResultsList";
+import sortByFavorite from "../../utils/sortByFavorite";
 
-const bouncePrint = debounce((e)=>{      
-  if(e.target.value !== ""){
+const bouncePrint = debounce((e) => {
+  // If input has some value
+  if (e.target.value !== "") {
+    let searchResult = fussy
+      .search(e.target.value)
+      .map((result) => result.item);
+    // Sort results by favorites
+    searchResult = sortByFavorite(searchResult);
+
+    // Render list with search results
     updateResultListRender(
-      "js-results",
-      "js-results-list",
-      fussy.search(e.target.value).map(result=>result.item),
-      ResultsList)
-  }else{
+      SEARCH_RESULTS_CONTAINER_ID,
+      SEARCH_RESULTS_LIST_ELEMENT_ID,
+      ResultsList,
+      searchResult
+    );
+  } else {
+    // Local storage meal data sorted by favorites
+    let mealData = sortByFavorite(getMealDB());
+
+    // If input is empty render all elements back
     updateResultListRender(
-      "js-results",
-      "js-results-list",
-      getMealDB(),
-      ResultsList)
+      SEARCH_RESULTS_CONTAINER_ID,
+      SEARCH_RESULTS_LIST_ELEMENT_ID,
+      ResultsList,
+      mealData
+    );
   }
-},250);
+}, 250);
 
 const SearchBar = () => {
-
-
   return (
     <section
       id="search-bar"
