@@ -12,7 +12,7 @@
 
 kullanılarak tamamlanmıştır.
 
-> Screenshoots
+> Screenshots
 
 ![Screen-1](https://i.ibb.co/8KZnb1B/foodie-1.png)
 
