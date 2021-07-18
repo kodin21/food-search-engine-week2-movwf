@@ -13,6 +13,7 @@ import { showLoading, hideLoading } from "./showLoading";
 import Options from "../fuse.options";
 
 initiateFavoriteMealsDB(); // Create empty storage for favorited meals
+
 showLoading(); // Renders loading screen
 
 export let fussy;
@@ -31,8 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     // First time fetch online data to localStorage
     Promise.all([fetchUserData, fetchMealData]).then((data) => {
-      initiateUserDB(data[0]); // Create storage for user data
-      initiateMealDB(data[1].record); // Create storage for meal data
+      const [userData, mealData] = data;
+
+      initiateUserDB(userData); // Create storage for user data
+      initiateMealDB(mealData.record); // Create storage for meal data
 
       // Delay for visual
       setTimeout(() => {
@@ -42,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 2000);
 
       // Create Fuse Object after data load
-      fussy = new Fuse(getMealDB(), Options);
+      fussy = new Fuse(mealData.record, Options);
     });
   }
 });
