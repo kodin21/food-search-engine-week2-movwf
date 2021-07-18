@@ -1,3 +1,9 @@
+/*
+ ========================================
+    LOCAL STORAGE DATABANK FUNCTIONS
+ ========================================
+*/
+
 const createDataBank = (dbId) => {
   // Look if storage exist and initiate
   localStorage.getItem(dbId)
@@ -21,9 +27,10 @@ const retrieveDataBank = (dbId) => {
 const updateDataBank = (dbId, newData) => {
   localStorage.setItem(dbId, JSON.stringify(newData));
 };
-
 /*
-    USER
+ ========================================
+    USER FUNCTIONS
+ ========================================
 */
 const USER_DATA_DB_NAME = "mealie-user";
 
@@ -44,7 +51,9 @@ const updateUserData = (newUserData) => {
 };
 
 /*
-    FAVORITE MEALS
+ ========================================
+    FAVORITE MEAL FUNCTIONS
+ ========================================
 */
 const FAVORITE_MEAL_DB_NAME = "mealie-favorited-meals";
 
@@ -78,7 +87,9 @@ const updateFavoritedMeal = (idMeal, mode) => {
 };
 
 /*
-    MEAL DB
+ ========================================
+    MEAL DATABANK FUNCTIONS
+ ========================================
 */
 const MEAL_DB_NAME = "mealie-meal-db";
 
@@ -120,7 +131,9 @@ const updateFavoriteMealDB = (mealID) => {
 };
 
 /*
-  CHECK FOR OFFLINE MODE
+ ========================================
+    OFFLINE MODE CONTROLLER
+ ========================================
 */
 
 const controlOfflineData = () => {
